@@ -65,9 +65,6 @@ public final class Mp4ParserWrapper {
         } catch (Exception e) {
             Log.e(TAG, "Appending two mp4 files failed with exception", e);
             return false;
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Appending two mp4 files failed with exception", e);
-            return false;
         } catch (OutOfMemoryError e) {
             Log.e(TAG, "Appending two mp4 files failed with out of memory exception", e);
             return false
