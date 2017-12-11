@@ -67,7 +67,7 @@ public final class Mp4ParserWrapper {
             return false;
         } catch (OutOfMemoryError e) {
             Log.e(TAG, "Appending two mp4 files failed with out of memory exception", e);
-            return false
+            return false;
         }
     }
 
