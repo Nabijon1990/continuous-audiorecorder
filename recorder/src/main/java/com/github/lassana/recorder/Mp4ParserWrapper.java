@@ -62,7 +62,7 @@ public final class Mp4ParserWrapper {
                 copyFile(anotherFileName, mainFileName);
                 return anotherFile.delete();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             Log.e(TAG, "Appending two mp4 files failed with exception", e);
             return false;
         }
