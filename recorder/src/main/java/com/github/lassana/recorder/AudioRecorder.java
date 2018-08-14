@@ -141,15 +141,18 @@ public class AudioRecorder {
 
     private Status mStatus;
     private MediaRecorder mMediaRecorder;
+    private final String mTemporaryFilePath;
     private final String mTargetRecordFileName;
     private final Context mContext;
     private final MediaRecorderConfig mMediaRecorderConfig;
     private final boolean mIsLoggable;
 
     /* package-local */ AudioRecorder(@NonNull final Context context,
+                                      @NonNull final String temporaryFilePath,
                                       @NonNull final String targetRecordFileName,
                                       @NonNull final MediaRecorderConfig mediaRecorderConfig,
                                       final boolean isLoggable) {
+        mTemporaryFilePath = temporaryFilePath;
         mTargetRecordFileName = targetRecordFileName;
         mContext = context;
         mMediaRecorderConfig = mediaRecorderConfig;
@@ -171,8 +174,9 @@ public class AudioRecorder {
      */
     @Deprecated
     public static AudioRecorder build(@NonNull final Context context,
+                                      @NonNull final String temporaryFilePath,
                                       @NonNull final String targetFileName) {
-        return build(context, targetFileName, MediaRecorderConfig.DEFAULT);
+        return build(context, temporaryFilePath, targetFileName, MediaRecorderConfig.DEFAULT);
     }
 
     /**
@@ -187,10 +191,12 @@ public class AudioRecorder {
      */
     @Deprecated
     public static AudioRecorder build(@NonNull final Context context,
+                                      @NonNull final String temporaryFilePath,
                                       @NonNull final String targetFileName,
                                       @NonNull final MediaRecorderConfig mediaRecorderConfig) {
         AudioRecorder rvalue = new AudioRecorder(
                 context,
+                temporaryFilePath,
                 targetFileName,
                 mediaRecorderConfig,
                 false);
@@ -289,7 +295,7 @@ public class AudioRecorder {
     }
 
     private String getTemporaryFileName() {
-        return mContext.getCacheDir().getAbsolutePath() + File.separator + "tmprecord";
+        return mTemporaryFilePath + File.separator + "tmprecord";
     }
 
     private void appendToFile(@NonNull final String targetFileName, @NonNull final String newFileName) {

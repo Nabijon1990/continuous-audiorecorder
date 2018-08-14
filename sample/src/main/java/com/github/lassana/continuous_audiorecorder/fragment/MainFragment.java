@@ -60,11 +60,11 @@ public class MainFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.buttonStartRecording:
-                    v.setEnabled(false);
+//                    v.setEnabled(false);
                     tryStart();
                     break;
                 case R.id.buttonPauseRecording:
-                    v.setEnabled(false);
+//                    v.setEnabled(false);
                     pause();
                     break;
                 case R.id.buttonPlayRecording:
@@ -137,28 +137,28 @@ public class MainFragment extends Fragment {
         switch (mAudioRecorder.getStatus()) {
             case STATUS_UNKNOWN:
                 mCassetteImage.clearAnimation();
-                mStartButton.setEnabled(false);
-                mPauseButton.setEnabled(false);
-                mPlayButton.setEnabled(false);
+//                mStartButton.setEnabled(false);
+//                mPauseButton.setEnabled(false);
+//                mPlayButton.setEnabled(false);
                 break;
             case STATUS_READY_TO_RECORD:
                 mCassetteImage.clearAnimation();
-                mStartButton.setEnabled(true);
-                mPauseButton.setEnabled(false);
-                mPlayButton.setEnabled(false);
+//                mStartButton.setEnabled(true);
+//                mPauseButton.setEnabled(false);
+//                mPlayButton.setEnabled(false);
                 break;
             case STATUS_RECORDING:
                 mCassetteImage.startAnimation(
                         AnimationUtils.loadAnimation(getActivity(), R.anim.animation_pulse));
-                mStartButton.setEnabled(false);
-                mPauseButton.setEnabled(true);
-                mPlayButton.setEnabled(false);
+//                mStartButton.setEnabled(false);
+//                mPauseButton.setEnabled(true);
+//                mPlayButton.setEnabled(false);
                 break;
             case STATUS_RECORD_PAUSED:
                 mCassetteImage.clearAnimation();
-                mStartButton.setEnabled(true);
-                mPauseButton.setEnabled(false);
-                mPlayButton.setEnabled(true);
+//                mStartButton.setEnabled(true);
+//                mPauseButton.setEnabled(false);
+//                mPlayButton.setEnabled(true);
                 break;
             default:
                 break;

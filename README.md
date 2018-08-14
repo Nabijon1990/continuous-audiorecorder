@@ -10,14 +10,14 @@ Grab the latest version from Bintray:
         jcenter()
     }
     dependencies {
-        compile "com.googlecode.mp4parser:isoparser:1.0.2"
-        compile "com.github.lassana:continuous-audiorecorder:1.3.2"
+        implementation "com.googlecode.mp4parser:isoparser:1.0.2"
+        implementation "com.github.lassana:continuous-audiorecorder:1.3.2"
     }
 
 or just copy the `recorder` module into your project and add a new dependency:
 
     dependencies {
-        compile project(':recorder')
+        implementation project(':recorder')
     }
 
 ## Usage

@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 public final class AudioRecorderBuilder {
 
     private Context mContext;
+    private String mTemporaryFilePath;
     private String mFileName;
     private AudioRecorder.MediaRecorderConfig mConfig;
     private boolean mIsLoggable;
@@ -23,6 +24,11 @@ public final class AudioRecorderBuilder {
         final AudioRecorderBuilder audioRecorderBuilder = new AudioRecorderBuilder();
         audioRecorderBuilder.mContext = context;
         return audioRecorderBuilder;
+    }
+
+    public AudioRecorderBuilder temporaryFilePath(@NonNull String temporaryFilePath) {
+        mTemporaryFilePath = temporaryFilePath;
+        return this;
     }
 
     public AudioRecorderBuilder fileName(@NonNull String targetFileName) {
@@ -52,7 +58,7 @@ public final class AudioRecorderBuilder {
         if (mFileName == null) {
             throw new RuntimeException("Target filename is not set: use `#fileName` method");
         }
-        return new AudioRecorder(mContext, mFileName, mConfig, mIsLoggable);
+        return new AudioRecorder(mContext, mTemporaryFilePath, mFileName, mConfig, mIsLoggable);
     }
 
 }
