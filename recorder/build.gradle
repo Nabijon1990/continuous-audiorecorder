@@ -2,13 +2,7 @@ apply plugin: 'com.android.library'
 //apply plugin: 'com.novoda.bintray-release'
 
 repositories {
-    google()
     jcenter()
-    maven { url "https://jitpack.io" }
-    maven {
-        name "jitpack"
-        url "https://jitpack.io"
-    }
 }
 
 android {
