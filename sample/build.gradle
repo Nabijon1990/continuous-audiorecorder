@@ -8,7 +8,6 @@ dependencies {
     implementation "com.android.support:support-v4:27.1.1"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:multidex:1.0.3'
     implementation project(":recorder")
     androidTestImplementation "com.jayway.android.robotium:robotium-solo:4.3.1"
 }
@@ -26,6 +25,5 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 27
-        multiDexEnabled true
     }
 }
