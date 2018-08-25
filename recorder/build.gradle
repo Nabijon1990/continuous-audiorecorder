@@ -21,8 +21,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.Nabijon1990.mp4parser:isoparser:1.9.31.1'
-    implementation 'com.github.Nabijon1990.mp4parser:muxer:1.9.31.1'
+    implementation group: 'org.mp4parser', name: 'isoparser', version: '1.9.37'
+    implementation group: 'org.mp4parser', name: 'muxer', version: '1.9.37'
     implementation 'com.android.support:support-annotations:27.1.1'
 }
 
